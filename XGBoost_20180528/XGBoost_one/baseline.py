@@ -1,3 +1,7 @@
+# -*- coding:utf-8 -*-
+
+"""This module is used to construct XGBoost"""
+
 # 导入必要的工具包
 import xgboost as xgb
 
@@ -40,8 +44,7 @@ y_test = dtest.get_label()
 test_accuracy = accuracy_score(y_test, predictions)
 print('Thain Accuary:%.2f%%' % (test_accuracy * 100.0))
 
-
-from matplotlib import pyplot
-import graphviz
-xgb.plot_tree(bst, num_trees=0, rankdir='LR')
-pyplot.show()
+# from matplotlib import pyplot
+# import graphviz
+# xgb.plot_tree(bst, num_trees=0, rankdir='LR')
+# pyplot.show()
