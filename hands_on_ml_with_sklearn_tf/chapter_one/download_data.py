@@ -18,4 +18,4 @@ def fetch_housing_data(housing_url=HOUSING_URL, housing_path=HOUSING_PATH):
 
 
 # 调用函数，会在工作空间创建一个datasets/housing目录，下载housing.tgz文件，解压出housing.csv
-fetch_housing_data()
+# fetch_housing_data()
