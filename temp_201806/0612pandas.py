@@ -1,0 +1,28 @@
+import pandas as pd
+
+# data = pd.DataFrame({'A': [9, 2, 5, 4], 'B': [2, 6, 7, 8]})
+# data['C'] = data.eval('A * 10')
+# print(data.assign(C=data.A + 1))
+# print(data.append({'C': 100}, ignore_index=True))
+# print(data.drop(['A'], axis=1))
+# print(data.notnull())
+# print(data.count())
+# print(data.count(axis=1))
+# print(data.dropna(thresh=1))
+# print(data.fillna({'A': 99, 'B': 100}))
+# print(data.dropna().sum())
+# other = pd.DataFrame({'A': [100, 100, 100, 100], 'B': [101, 101, 101, 101]})
+# print(data.combine_first(other))
+# print(data.reset_index())
+
+# print(data.set_index('A', append=True))
+# print(data.unstack())
+# print(data.swaplevel(0, 1))
+
+data = pd.DataFrame({'A': [9, 2, 5, 4], 'B': [2, 6, 7, 8], 'C': [3, 5, 7, 9], 'D': [10, 15, 20, 25]})
+print(data)
+# data = data.pivot('A', 'B')
+# print(data)
+data = data.reset_index()
+data = pd.melt(data, id_vars='index', value_name='B')
+print(data)
