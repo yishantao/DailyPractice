@@ -29,7 +29,7 @@ import pandas as pd
 # from sklearn.preprocessing import Normalizer
 #
 # scaler = Normalizer()
-# data['A'] = scaler.fit_transform(data[['A']])
+# data = scaler.fit_transform(data[['A', 'B']])
 # print(data)
 
 # data = pd.DataFrame({'A': [2, 4, 3, 7, 9], 'B': ['大学', '大专', '大专', '硕士', '博士'], 'C': ['男', '男', '女', '女', '男']})
@@ -148,46 +148,46 @@ data = pd.DataFrame(
 # print(selectFromModel.get_support())
 
 
-# 导入iris特征数据到data变量中
-import pandas
-from sklearn import datasets
-import matplotlib.pyplot as plt
-from sklearn.decomposition import PCA
-from mpl_toolkits.mplot3d import Axes3D
-
-iris = datasets.load_iris()
-
-data = iris.data
-
-# 分类变量到target变量中
-target = iris.target
-
-# 使用主成分分析，将四维数据压缩为三维
-pca_3 = PCA(n_components=3)
-data_pca_3 = pca_3.fit_transform(data)
-
-# 绘图
-colors = {0: 'r', 1: 'b', 2: 'k'}
-markers = {0: 'x', 1: 'D', 2: 'o'}
-
-# 弹出图形
-# %matplotlib qt
-
-# 三维数据
-fig = plt.figure(1, figsize=(8, 6))
-ax = Axes3D(fig, elev=-150, azim=110)
-
-data_pca_gb = pandas.DataFrame(
-    data_pca_3
-).groupby(target)
-
-for g in data_pca_gb.groups:
-    ax.scatter(
-        data_pca_gb.get_group(g)[0],
-        data_pca_gb.get_group(g)[1],
-        data_pca_gb.get_group(g)[2],
-        c=colors[g],
-        marker=markers[g],
-        cmap=plt.cm.Paired
-    )
-plt.show()
+# # 导入iris特征数据到data变量中
+# import pandas
+# from sklearn import datasets
+# import matplotlib.pyplot as plt
+# from sklearn.decomposition import PCA
+# from mpl_toolkits.mplot3d import Axes3D
+#
+# iris = datasets.load_iris()
+#
+# data = iris.data
+#
+# # 分类变量到target变量中
+# target = iris.target
+#
+# # 使用主成分分析，将四维数据压缩为三维
+# pca_3 = PCA(n_components=3)
+# data_pca_3 = pca_3.fit_transform(data)
+#
+# # 绘图
+# colors = {0: 'r', 1: 'b', 2: 'k'}
+# markers = {0: 'x', 1: 'D', 2: 'o'}
+#
+# # 弹出图形
+# # %matplotlib qt
+#
+# # 三维数据
+# fig = plt.figure(1, figsize=(8, 6))
+# ax = Axes3D(fig, elev=-150, azim=110)
+#
+# data_pca_gb = pandas.DataFrame(
+#     data_pca_3
+# ).groupby(target)
+#
+# for g in data_pca_gb.groups:
+#     ax.scatter(
+#         data_pca_gb.get_group(g)[0],
+#         data_pca_gb.get_group(g)[1],
+#         data_pca_gb.get_group(g)[2],
+#         c=colors[g],
+#         marker=markers[g],
+#         cmap=plt.cm.Paired
+#     )
+# plt.show()
