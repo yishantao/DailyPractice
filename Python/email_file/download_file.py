@@ -2,9 +2,10 @@
 
 import poplib
 from email.parser import Parser
+from parse_file import *
 
 # 输入邮件地址、口令和POP3服务器地址
-email = input('Email:')
+email = input('email_file:')
 password = input('Password:')
 pop3_server = input('POP3 server:')
 
@@ -35,7 +36,7 @@ resp, lines, octets = server.retr(index)
 msg_content = b'\r\n'.join(lines).decode('utf-8')
 # 稍后解析邮件
 msg = Parser().parsestr(msg_content)
-
+print_info(msg)
 # 可以根据邮件索引号直接从服务器删除邮件
 # server.dele(index)
 # 关闭连接
