@@ -2,7 +2,6 @@ from email.header import decode_header
 from email.utils import parseaddr
 
 
-
 def print_info(msg, indent=0):
     if indent == 0:
         for header in ['From', 'To', 'Subject']:
