@@ -1,3 +1,6 @@
+# -*- coding:utf-8-*-
+"""读取配置文件"""
+
 import configparser
 
 from named_tuples import MySQL
@@ -16,7 +19,7 @@ class ConfigReader:
     def get_mysql_info(self):
         host = self.conf.get('MySQL', 'host')
         user = self.conf.get('MySQL', 'user')
-        pswd = self.conf.get('MySQL', 'pswd')
+        pswd = self.conf.get('MySQL', 'password')
         port = self.conf.get('MySQL', 'port')
         charset = self.conf.get('MySQL', 'charset')
         schema = self.conf.get('MySQL', 'schema')
