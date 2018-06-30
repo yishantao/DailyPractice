@@ -2,7 +2,7 @@
 """创建窗口"""
 
 import sys
-from PyQt5 import QtWidgets
+from PyQt5 import QtWidgets, QtCore
 
 
 # 通过继承QtWidgets.QMainWindow创建类
@@ -11,6 +11,9 @@ class MyWindow(QtWidgets.QMainWindow):
         QtWidgets.QMainWindow.__init__(self)
         self.setWindowTitle('PyQT')  # 设置窗口标题
         self.resize(300, 200)  # 设置窗口大小
+        label = QtWidgets.QLabel('PyQt label')
+        label.setAlignment(QtCore.Qt.AlignCenter)
+        self.setCentralWidget(label)
 
 
 app = QtWidgets.QApplication(sys.argv)  # 创建QApplication对象
