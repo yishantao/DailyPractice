@@ -5,10 +5,10 @@ import sys
 from PyQt5 import QtWidgets, QtCore
 
 
-# 通过继承QtWidgets.QMainWindow创建类
-class MyWindow(QtWidgets.QMainWindow):
+# 通过继承QtWidgets.QWidget创建类
+class MyWindow(QtWidgets.QWidget):
     def __init__(self):
-        QtWidgets.QMainWindow.__init__(self)
+        QtWidgets.QWidget.__init__(self)
         self.setWindowTitle('PyQT')  # 设置窗口标题
         self.resize(300, 200)  # 设置窗口大小
         grid_layout = QtWidgets.QGridLayout()
