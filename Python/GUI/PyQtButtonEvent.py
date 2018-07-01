@@ -32,5 +32,4 @@ class MyWindow(QtWidgets.QWidget):
 app = QtWidgets.QApplication(sys.argv)  # 创建QApplication对象
 my_window = MyWindow()
 my_window.show()  # 显示窗口
-# exec_进入消息循环，exit确保应用程序的退出
 sys.exit(app.exec_())
