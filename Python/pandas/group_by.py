@@ -59,7 +59,6 @@ mapping = {'name': 'a', 'category': 'b', 'number': 'a', 'count': 'b'}
 def peak_to_peak(arr):
     return arr.max() - arr.min()
 
-
 #
 # print(data.groupby('name')['number'].agg(peak_to_peak))
 
@@ -71,4 +70,4 @@ def peak_to_peak(arr):
 
 # print(data.groupby('name')['number', 'count'].agg({'number': [('one', 'min'), ('two', 'max')], 'count': 'sum'}))
 
-print(data.groupby('name', as_index=False)['number'].agg('mean'))
+# print(data.groupby('name', as_index=False)['number'].agg('mean'))
